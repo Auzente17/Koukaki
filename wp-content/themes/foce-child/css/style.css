@@ -1,0 +1,7 @@
+.banner {
+  position: relative;
+  -o-object-fit: contain;
+     object-fit: contain;
+  height: 800px;
+  background-image: none;
+}/*# sourceMappingURL=style.css.map */
