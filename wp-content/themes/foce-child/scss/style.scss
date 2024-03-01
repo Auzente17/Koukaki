@@ -1,7 +1,3 @@
-.banner {
-  position: relative;
-  object-fit: contain;
-  height: 800px;
-
-  background-image: none;
-}
+@import "banner";
+@import "animations";
+@import "nomination";

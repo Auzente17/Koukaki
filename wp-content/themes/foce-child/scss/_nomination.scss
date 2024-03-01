@@ -1,0 +1,26 @@
+.nomination__title {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: url("<?php echo get_theme_file_uri() . '/assets/images/orange_oscars.png'; ?>")
+    no-repeat center center;
+  background-size: cover;
+  padding: 20px;
+}
+
+h3 {
+  margin-right: 20px;
+  z-index: -1;
+  position: absolute;
+  text-align: left;
+}
+
+.nomination__logo {
+  width: 100px;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  z-index: 2;
+}

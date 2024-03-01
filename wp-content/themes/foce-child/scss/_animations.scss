@@ -1,0 +1,21 @@
+// ROTATION DES FLEURS //
+
+.Sunflower {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 150px; /* la taille des fleurs */
+  height: 150px;
+  background-image: url("<?php echo get_stylesheet_directory_uri(); ?>/images/Sunflower.png");
+  background-size: cover;
+  animation: rotate 5s linear infinite; /* Ajustez la durée de rotation selon vos besoins */
+}
+
+@keyframes rotate-Sunflower {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

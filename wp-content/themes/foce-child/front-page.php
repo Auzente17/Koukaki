@@ -6,12 +6,20 @@ get_header();
     <main id="primary" class="site-main">
         <!--Ici je vais ajouter la vidéo et la banner background -->
         <section class="banner">
-            <img class="banner__background" src="<?php echo get_theme_file_uri() . '/assets/images/banner.png'; ?> " alt="banner Fleurs d'oranger & chats errants">
             
-            <img class="banner__logo" src="<?php echo get_template_directory_uri() . '/assets/images/logo.png'; ?> " alt="logo Fleurs d'oranger & chats errants">
+                <video class="banner__video"autoplay loop muted>
+                <source src="<?php echo get_stylesheet_directory_uri() . '/assets/Video/video.mp4'; ?>" type="video/mp4">
+                </video>
+            
+                     
+            <div class="banner__logo">
+                <img src="<?php echo get_stylesheet_directory_uri() . '/assets/images/logo.png'; ?>" alt="logo Fleurs d'oranger & chats errants">
+            </div>
         </section>
 
-        <section id="story" class="story">
+
+
+        <section id="story" class="story fade-in">
             <h2>L'histoire</h2>
             <article id="" class="story__article">
                 <p><?php echo get_theme_mod('story'); ?></p>
@@ -69,6 +77,9 @@ get_header();
                 <p>Avec une créativité et une capacité d’innovation mondialement reconnues, une expertise éditoriale et commerciale à la pointe de son industrie, le Studio Koukaki se positionne comme un acteur incontournable dans un marché en forte croissance. Koukaki construit chaque année de véritables succès et capitalise sur de puissantes marques historiques. Cette année, il vous présente “Fleurs d’oranger et chats errants”.</p>
             </div>
             </section>
+
+            <!-- ajout de la section nomination templates-parts -->
+        <?php get_template_part('template-parts/content', 'nomination'); ?>
     </main><!-- #main -->
 
 <?php
