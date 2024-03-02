@@ -1,26 +1,44 @@
-.nomination__title {
+/* Styles pour .nomination */
+.nomination {
   position: relative;
+  padding: 150px 0 50px;
   display: flex;
+  flex-wrap: wrap;
+  gap: 40px 0;
+  justify-content: center;
   align-items: center;
-  background: url("<?php echo get_theme_file_uri() . '/assets/images/orange_oscars.png'; ?>")
-    no-repeat center center;
-  background-size: cover;
-  padding: 20px;
-}
 
-h3 {
-  margin-right: 20px;
-  z-index: -1;
-  position: absolute;
-  text-align: left;
-}
+  /* Styles pour .nomination__title */
+  &__title {
+    position: relative;
+  }
 
-.nomination__logo {
-  width: 100px;
-  height: auto;
-  position: absolute;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
-  z-index: 2;
+  /* Styles pour .nomination__title img */
+  & img {
+    height: 100%;
+  }
+
+  /* Styles pour .nomination__title h3 */
+  & h3 {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    line-height: 3.2rem;
+    text-align: left;
+  }
+
+  /* Styles pour les images */
+  &__logo {
+    display: flex;
+    align-items: center;
+
+    /* styles pour .nominations__logo img */
+    & img {
+      width: 149px;
+      height: auto;
+      margin-left: 20px;
+      background: url("../assets/images/logo-oscars.png") no-repeat;
+      background-size: contain;
+    }
+  }
 }

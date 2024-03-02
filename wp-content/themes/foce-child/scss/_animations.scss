@@ -1,17 +1,57 @@
-// ROTATION DES FLEURS //
+// MISE EN PLACE DES FADE IN //
 
-.Sunflower {
-  position: relative;
-  top: 0;
-  left: 0;
-  width: 150px; /* la taille des fleurs */
-  height: 150px;
-  background-image: url("<?php echo get_stylesheet_directory_uri(); ?>/images/Sunflower.png");
-  background-size: cover;
-  animation: rotate 5s linear infinite; /* Ajustez la durée de rotation selon vos besoins */
+// KEYFRAMES pour les Fade in
+@keyframes fadeInBottom {
+  /* Animation vers le bas */
+  0% {
+    opacity: 0;
+    transform: translateY(200px); // distance de l'effet
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-@keyframes rotate-Sunflower {
+// Animation fade in de toutes les sections
+#story,
+#studio,
+footer {
+  opacity: 0;
+  animation: fadeInBottom 1.5s 0.5s forwards;
+}
+
+// KEYFRAMES pour les animations des paragraphes des sections
+
+@keyframes fadeInText {
+  0% {
+    opacity: 0;
+    transform: translateY(-150px);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0px);
+  }
+}
+
+// ROTATION DES FLEURS //
+
+//** Taille des fleurs
+
+.story__article::after {
+  display: inline-block;
+  width: 109px; // Ajustez la taille selon vos besoins
+  height: 109px; // Ajustez la taille selon vos besoins
+  background-image: url("assets/images/flower.png");
+  background-size: cover;
+  transform-origin: center center;
+
+  animation: transform 5s linear infinite;
+}
+
+@keyframes rotateFlower {
   from {
     transform: rotate(0deg);
   }
