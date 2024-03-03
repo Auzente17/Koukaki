@@ -38,4 +38,57 @@ footer {
 
 // ROTATION DES FLEURS //
 
-//** Taille des fleurs
+// taille des fleurs //
+
+/* Hibiscus */
+.story__article::after {
+  width: 188px;
+  height: 188px;
+}
+
+/* Sunflower */
+.story h2::after,
+.site-footer::before {
+  width: 154px;
+  height: 154px;
+}
+
+/* flower */
+.studio h2::after {
+  width: 109px;
+  height: 109px;
+}
+
+/* random_flower. */
+.studio h2::before {
+  width: 203px;
+  height: 203px;
+}
+
+/* orchid. */
+.site-footer::after {
+  width: 173px;
+  height: 173px;
+}
+
+@keyframes rotate-flower {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Ajout de l'animation rotation sur les fleurs avec la variable --rotate définie dans root */
+.story h2::after,
+.story__article::after,
+.studio h2::after,
+.studio h2::before,
+.nomination::before,
+.nomination::after,
+.site-footer::before,
+.site-footer::after,
+.site-footer ul::after {
+  animation: rotate-flower var(--rotate) linear infinite;
+}

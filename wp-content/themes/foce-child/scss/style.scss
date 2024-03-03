@@ -1,3 +1,7 @@
 @import "banner";
 @import "animations";
 @import "nomination";
+
+:root {
+  --rotate: 15s; /* ou la durée souhaitée en secondes */
+}

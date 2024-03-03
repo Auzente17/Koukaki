@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .banner {
   position: relative;
   margin-bottom: 60px;
@@ -47,17 +48,38 @@ footer {
     transform: translate(0px);
   }
 }
+/* Hibiscus */
 .story__article::after {
-  display: inline-block;
-  width: 109px;
-  height: 109px;
-  background-image: url("assets/images/flower.png");
-  background-size: cover;
-  transform-origin: center center;
-  animation: transform 5s linear infinite;
+  width: 188px;
+  height: 188px;
 }
 
-@keyframes rotateFlower {
+/* Sunflower */
+.story h2::after,
+.site-footer::before {
+  width: 154px;
+  height: 154px;
+}
+
+/* flower */
+.studio h2::after {
+  width: 109px;
+  height: 109px;
+}
+
+/* random_flower. */
+.studio h2::before {
+  width: 203px;
+  height: 203px;
+}
+
+/* orchid. */
+.site-footer::after {
+  width: 173px;
+  height: 173px;
+}
+
+@keyframes rotate-flower {
   from {
     transform: rotate(0deg);
   }
@@ -65,6 +87,19 @@ footer {
     transform: rotate(360deg);
   }
 }
+/* Ajout de l'animation rotation sur les fleurs avec la variable --rotate définie dans root */
+.story h2::after,
+.story__article::after,
+.studio h2::after,
+.studio h2::before,
+.nomination::before,
+.nomination::after,
+.site-footer::before,
+.site-footer::after,
+.site-footer ul::after {
+  animation: rotate-flower var(--rotate) linear infinite;
+}
+
 /* Styles pour .nomination */
 .nomination {
   position: relative;
@@ -101,6 +136,10 @@ footer {
   width: 149px;
   height: auto;
   margin-left: 20px;
-  background: url("../assets/images/logo-oscars.png") no-repeat;
+  background: url("http://localhost:81/Koukaki/wp-content/themes/foce-child/assets/images/logo-oscars.png") no-repeat;
   background-size: contain;
+}
+
+:root {
+  --rotate: 15s; /* ou la durée souhaitée en secondes */
 }/*# sourceMappingURL=style.css.map */
