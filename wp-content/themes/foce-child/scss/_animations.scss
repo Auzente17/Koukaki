@@ -39,23 +39,3 @@ footer {
 // ROTATION DES FLEURS //
 
 //** Taille des fleurs
-
-.story__article::after {
-  display: inline-block;
-  width: 109px; // Ajustez la taille selon vos besoins
-  height: 109px; // Ajustez la taille selon vos besoins
-  background-image: url("assets/images/flower.png");
-  background-size: cover;
-  transform-origin: center center;
-
-  animation: transform 5s linear infinite;
-}
-
-@keyframes rotateFlower {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
