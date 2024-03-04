@@ -1,43 +1,85 @@
 @charset "UTF-8";
-.fade-in {
-  opacity: 1;
-  transition: opacity 1s ease-in-out;
-}
-
-.fade-in.active {
-  opacity: 1;
-}
-
 .banner {
   position: relative;
   margin-bottom: 60px;
 }
-.banner__background {
-  display: none;
-}
 .banner__video {
-  position: fixed;
+  position: absolute;
   -o-object-fit: cover;
      object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 .banner__logo {
   position: sticky;
-  top: 80px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 10;
 }
 
-.Sunflower {
-  position: relative;
-  top: 0;
-  left: 0;
-  width: 150px; /* la taille des fleurs */
-  height: 150px;
-  background-image: url("<?php echo get_stylesheet_directory_uri(); ?>/images/Sunflower.png");
-  background-size: cover;
-  animation: rotate 5s linear infinite; /* Ajustez la durée de rotation selon vos besoins */
+@keyframes fadeInBottom {
+  /* Animation vers le bas */
+  0% {
+    opacity: 0;
+    transform: translateY(200px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+#story,
+#studio,
+footer {
+  opacity: 0;
+  animation: fadeInBottom 1.5s 0.5s forwards;
 }
 
-@keyframes rotate-Sunflower {
+@keyframes fadeInText {
+  0% {
+    opacity: 0;
+    transform: translateY(-150px);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0px);
+  }
+}
+/* Hibiscus */
+.story__article::after {
+  width: 188px;
+  height: 188px;
+}
+
+/* Sunflower */
+.story h2::after,
+.site-footer::before {
+  width: 154px;
+  height: 154px;
+}
+
+/* flower */
+.studio h2::after {
+  width: 109px;
+  height: 109px;
+}
+
+/* random_flower. */
+.studio h2::before {
+  width: 203px;
+  height: 203px;
+}
+
+/* orchid. */
+.site-footer::after {
+  width: 173px;
+  height: 173px;
+}
+
+@keyframes rotate-flower {
   from {
     transform: rotate(0deg);
   }
@@ -45,28 +87,76 @@
     transform: rotate(360deg);
   }
 }
+/* Ajout de l'animation rotation sur les fleurs avec la variable --rotate définie dans root */
+.story h2::after,
+.story__article::after,
+.studio h2::after,
+.studio h2::before,
+.nomination::before,
+.nomination::after,
+.site-footer::before,
+.site-footer::after,
+.site-footer ul::after {
+  animation: rotate-flower var(--rotate) linear infinite;
+}
+
+/* Styles pour .nomination */
+.nomination {
+  position: relative;
+  padding: 150px 0 50px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px 0;
+  justify-content: center;
+  align-items: center;
+  /* Styles pour .nomination__title */
+  /* Styles pour .nomination__title img */
+  /* Styles pour .nomination__title h3 */
+  /* Styles pour les images */
+}
 .nomination__title {
   position: relative;
-  display: flex;
-  align-items: center;
-  background: url("<?php echo get_theme_file_uri() . '/assets/images/orange_oscars.png'; ?>") no-repeat center center;
-  background-size: cover;
-  padding: 20px;
 }
-
-h3 {
-  margin-right: 20px;
-  z-index: -1;
-  position: absolute;
-  text-align: left;
+.nomination img {
+  height: 100%;
 }
-
-.nomination__logo {
-  width: 100px;
-  height: auto;
+.nomination h3 {
   position: absolute;
   top: 50%;
-  right: 0;
   transform: translateY(-50%);
-  z-index: 2;
+  line-height: 3.2rem;
+  text-align: left;
+}
+.nomination__logo {
+  display: flex;
+  align-items: center;
+  /* styles pour .nominations__logo img */
+  /** Cacher les fleurs appartenant au footer pour les déplacer dans la nouvelle section nomination **/
+}
+.nomination__logo img {
+  width: 149px;
+  height: auto;
+  margin-left: 20px;
+  background: url("http://localhost:81/Koukaki/wp-content/themes/foce-child/assets/images/logo-oscars.png") no-repeat;
+  background-size: contain;
+}
+.nomination__logo .nomination::before {
+  content: url("../assets/images/Sunflower.png");
+  position: absolute;
+  left: 4em;
+  top: 0em;
+}
+.nomination__logo .nomination::after {
+  content: url("../assets/images/orchid.png");
+  position: absolute;
+  right: -4em;
+  bottom: -3em;
+}
+.nomination__logo .site-footer::before,
+.nomination__logo .site-footer::after {
+  content: "";
+}
+
+:root {
+  --rotate: 15s; /* ou la durée souhaitée en secondes */
 }/*# sourceMappingURL=style.css.map */

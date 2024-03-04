@@ -41,5 +41,26 @@
         no-repeat;
       background-size: contain;
     }
+
+    /** Cacher les fleurs appartenant au footer pour les déplacer dans la nouvelle section nomination **/
+
+    .nomination::before {
+      content: url("../assets/images/Sunflower.png");
+      position: absolute;
+      left: 4em;
+      top: 0em;
+    }
+
+    .nomination::after {
+      content: url("../assets/images/orchid.png");
+      position: absolute;
+      right: -4em;
+      bottom: -3em;
+    }
+
+    .site-footer::before,
+    .site-footer::after {
+      content: "";
+    }
   }
 }

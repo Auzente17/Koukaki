@@ -6,7 +6,7 @@
 .banner__video {
   position: absolute;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   width: 100%;
   height: 100%;
 }
@@ -131,15 +131,33 @@ footer {
   display: flex;
   align-items: center;
   /* styles pour .nominations__logo img */
+  /** Cacher les fleurs appartenant au footer pour les déplacer dans la nouvelle section nomination **/
 }
 .nomination__logo img {
   width: 149px;
   height: auto;
   margin-left: 20px;
-  background: url("http://localhost:81/Koukaki/wp-content/themes/foce-child/assets/images/logo-oscars.png") no-repeat;
+  background: url("http://localhost:81/Koukaki/wp-content/themes/foce-child/assets/images/logo-oscars.png")
+    no-repeat;
   background-size: contain;
+}
+.nomination__logo .nomination::before {
+  content: url("../assets/images/Sunflower.png");
+  position: absolute;
+  left: 4em;
+  top: 0em;
+}
+.nomination__logo .nomination::after {
+  content: url("../assets/images/orchid.png");
+  position: absolute;
+  right: -4em;
+  bottom: -3em;
+}
+.nomination__logo .site-footer::before,
+.nomination__logo .site-footer::after {
+  content: "";
 }
 
 :root {
   --rotate: 15s; /* ou la durée souhaitée en secondes */
-}/*# sourceMappingURL=style.css.map */
+} /*# sourceMappingURL=style.css.map */
