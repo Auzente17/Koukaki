@@ -1,0 +1,59 @@
+//** Mise en place du style de la section Les personnages avec swiperJS
+.characters-swiper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+
+  h3 {
+    align-self: flex-start;
+    z-index: 2;
+    background-image: url("../assets/images/orange_characters_bg.png");
+  }
+
+  div {
+    flex: none !important;
+  }
+}
+
+//Style général du swiper
+.swiper {
+  width: 95%;
+  padding-top: 50px;
+  padding-bottom: 200px;
+
+  &-slide {
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+    height: 300px;
+    text-align: center;
+
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 919px) {
+  .swiper {
+    padding: 40px 0 40px 0;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 768px) {
+  .swiper {
+    width: 80%;
+  }
+
+  .story #characters {
+    margin: 0;
+    height: 250px;
+    width: 90%;
+  }
+
+  .characters-swiper h3 {
+    align-self: center;
+  }
+}

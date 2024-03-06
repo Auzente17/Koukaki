@@ -1,7 +1,16 @@
+// Import des autres fichiers
 @import "banner";
 @import "animations";
 @import "nomination";
+@import "characters";
+@import "clouds";
 
+// Définition des variables CSS personnalisées
 :root {
+  --cloudsPositionX: 0;
   --rotate: 15s; /* ou la durée souhaitée en secondes */
+}
+
+.story__article p {
+  animation: fadeInText 1.5s 0.5s forwards;
 }

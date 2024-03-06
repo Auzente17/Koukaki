@@ -1,0 +1,38 @@
+/* Styles pour .story #place */
+.story #place {
+  background-image: url("../assets/images/imageplace.png");
+  background-repeat: no-repeat;
+  animation: fadeBackgroundTitle 2s;
+
+  /* Styles pour les titres dans .story #place */
+  h3 {
+    background-image: url("../assets/images/orange_place_bg.png");
+  }
+
+  /* Styles pour les paragraphes dans .story #place */
+  p {
+    position: relative;
+    animation: fadeInText 1.5s 0.5s forwards;
+  }
+
+  /* Styles pour les images dans #place */
+  img {
+    position: absolute;
+    -moz-filter: blur(15px);
+    filter: blur(15px);
+    z-index: 2;
+    transform: translateX(var(--cloudsPositionX));
+
+    /* Styles pour les grands nuages dans #place */
+    &.big__cloud {
+      top: 69%;
+      left: calc(56% + 215px);
+    }
+
+    /* Styles pour les petits nuages dans #place */
+    &.little__cloud {
+      top: 79%;
+      right: calc(14% + 320px);
+    }
+  }
+}

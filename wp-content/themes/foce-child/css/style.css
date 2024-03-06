@@ -6,7 +6,7 @@
 .banner__video {
   position: absolute;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
   width: 100%;
   height: 100%;
 }
@@ -100,6 +100,42 @@ footer {
   animation: rotate-flower var(--rotate) linear infinite;
 }
 
+@keyframes title-animation {
+  100% {
+    transform: translateY(0%);
+  }
+}
+@keyframes fadeBackgroundTitle {
+  from {
+    background-position: 0 300px;
+    opacity: 0;
+  }
+  to {
+    background-position: 0 0;
+    opacity: 1;
+  }
+}
+.story h2 {
+  background-image: url("../assets/images/purple_title_bg.png");
+  animation: fadeBackgroundTitle 1s ease-in-out;
+}
+
+span.title {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: transform 1s, opacity 0.5s;
+}
+
+.title-animation:nth-child(1) {
+  animation: fadeInBottom 0.6s ease-in-out forwards;
+}
+
+.title-animation:nth-child(2) {
+  animation: fadeInBottom 0.6s ease-in-out forwards;
+  animation-delay: 0.3s;
+}
+
 /* Styles pour .nomination */
 .nomination {
   position: relative;
@@ -137,8 +173,7 @@ footer {
   width: 149px;
   height: auto;
   margin-left: 20px;
-  background: url("http://localhost:81/Koukaki/wp-content/themes/foce-child/assets/images/logo-oscars.png")
-    no-repeat;
+  background: url("http://localhost:81/Koukaki/wp-content/themes/foce-child/assets/images/logo-oscars.png") no-repeat;
   background-size: contain;
 }
 .nomination__logo .nomination::before {
@@ -158,6 +193,44 @@ footer {
   content: "";
 }
 
+/* Styles pour .story #place */
+.story #place {
+  background-image: url("../assets/images/imageplace.png");
+  background-repeat: no-repeat;
+  animation: fadeBackgroundTitle 2s;
+  /* Styles pour les titres dans .story #place */
+  /* Styles pour les paragraphes dans .story #place */
+  /* Styles pour les images dans #place */
+}
+.story #place h3 {
+  background-image: url("../assets/images/orange_place_bg.png");
+}
+.story #place p {
+  position: relative;
+  animation: fadeInText 1.5s 0.5s forwards;
+}
+.story #place img {
+  position: absolute;
+  -moz-filter: blur(15px);
+  filter: blur(15px);
+  z-index: 2;
+  transform: translateX(var(--cloudsPositionX));
+  /* Styles pour les grands nuages dans #place */
+  /* Styles pour les petits nuages dans #place */
+}
+.story #place img.big__cloud {
+  top: 69%;
+  left: calc(56% + 215px);
+}
+.story #place img.little__cloud {
+  top: 79%;
+  right: calc(14% + 320px);
+}
+
 :root {
   --rotate: 15s; /* ou la durée souhaitée en secondes */
-} /*# sourceMappingURL=style.css.map */
+}
+
+.story__article p {
+  animation: fadeInText 1.5s 0.5s forwards;
+}/*# sourceMappingURL=style.css.map */

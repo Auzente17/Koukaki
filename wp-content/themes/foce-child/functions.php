@@ -1,7 +1,13 @@
 <?php
-add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
+add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles_and_scripts' );
 
-function theme_enqueue_styles() {
+function theme_enqueue_styles_and_scripts() {
+
+// Chargement du fichier CSS swiper avec le CDN
+wp_enqueue_style('swiper-style', "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" , array());
+
+// Chargement du fichier JS de swiper avec le CDN
+wp_enqueue_script('swiper', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array('jquery'), false, true);
     
 // Chargement du style thème parent
 wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
