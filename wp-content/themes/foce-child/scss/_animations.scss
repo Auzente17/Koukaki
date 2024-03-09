@@ -126,7 +126,8 @@ footer {
 }
 
 // Mise en place de l'animation des titres
-span.title {
+span.title,
+span.title-studio {
   display: inline-block;
   opacity: 0;
   transform: translateY(100px);

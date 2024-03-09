@@ -120,7 +120,8 @@ footer {
   animation: fadeBackgroundTitle 1s ease-in-out;
 }
 
-span.title {
+span.title,
+span.title-studio {
   display: inline-block;
   opacity: 0;
   transform: translateY(100px);
@@ -167,7 +168,6 @@ span.title {
   display: flex;
   align-items: center;
   /* styles pour .nominations__logo img */
-  /** Cacher les fleurs appartenant au footer pour les déplacer dans la nouvelle section nomination **/
 }
 .nomination__logo img {
   width: 149px;
@@ -176,21 +176,31 @@ span.title {
   background: url("http://localhost:81/Koukaki/wp-content/themes/foce-child/assets/images/logo-oscars.png") no-repeat;
   background-size: contain;
 }
-.nomination__logo .nomination::before {
-  content: url("../assets/images/Sunflower.png");
+.nomination::before {
+  content: "";
+  background: url("../assets/images/Sunflower.png");
+  background-repeat: no-repeat;
+  background-position: center;
   position: absolute;
   left: 4em;
   top: 0em;
+  width: 216px;
+  height: 216px;
 }
-.nomination__logo .nomination::after {
+.nomination::after {
   content: url("../assets/images/orchid.png");
+  background-repeat: no-repeat;
   position: absolute;
   right: -4em;
   bottom: -3em;
+  width: 178px;
+  height: 178px;
 }
-.nomination__logo .site-footer::before,
-.nomination__logo .site-footer::after {
-  content: "";
+
+/** Cacher les fleurs appartenant au footer pour les déplacer dans la nouvelle section nomination **/
+.site-footer::before,
+.site-footer::after {
+  display: none;
 }
 
 /* Styles pour .story #place */
@@ -227,8 +237,56 @@ span.title {
   right: calc(14% + 320px);
 }
 
+.characters {
+  flex-direction: column;
+  width: 100%;
+}
+.characters h3 {
+  align-self: flex-start;
+  z-index: 2;
+  background-image: url("../assets/images/orange_characters_bg.png");
+}
+.characters div {
+  flex: none !important;
+}
+
+.swiper {
+  width: 95%;
+  padding-bottom: 205px;
+}
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 300px;
+  text-align: center;
+}
+.swiper-slide img {
+  display: block;
+  width: 100%;
+}
+
+@media screen and (max-width: 919px) {
+  .swiper {
+    padding: 40px 0 40px 0;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 768px) {
+  .swiper {
+    width: 80%;
+  }
+  .story #characters {
+    margin: 0;
+    height: 250px;
+    width: 90%;
+  }
+  .characters-swiper h3 {
+    align-self: center;
+  }
+}
 :root {
-  --rotate: 15s; /* ou la durée souhaitée en secondes */
+  --cloudsPositionX: 0;
+  --rotate: 15s; /* la durée souhaitée en secondes */
 }
 
 .story__article p {

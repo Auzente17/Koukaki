@@ -2,13 +2,13 @@
 @import "banner";
 @import "animations";
 @import "nomination";
-@import "characters";
 @import "clouds";
+@import "swiper";
 
 // Définition des variables CSS personnalisées
 :root {
   --cloudsPositionX: 0;
-  --rotate: 15s; /* ou la durée souhaitée en secondes */
+  --rotate: 15s; /* la durée souhaitée en secondes */
 }
 
 .story__article p {

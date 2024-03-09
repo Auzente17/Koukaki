@@ -1,9 +1,7 @@
 //** Mise en place du style de la section Les personnages avec swiperJS
-.characters-swiper {
-  display: flex;
+.characters {
   flex-direction: column;
   width: 100%;
-  text-align: center;
 
   h3 {
     align-self: flex-start;
@@ -19,8 +17,7 @@
 //Style général du swiper
 .swiper {
   width: 95%;
-  padding-top: 50px;
-  padding-bottom: 200px;
+  padding-bottom: 205px;
 
   &-slide {
     background-position: center;
