@@ -30,7 +30,7 @@
   }
 }
 #story,
-#studio,
+.my-studio,
 footer {
   opacity: 0;
   animation: fadeInBottom 1.5s 0.5s forwards;
@@ -62,13 +62,13 @@ footer {
 }
 
 /* flower */
-.studio h2::after {
+.my-studio h2::after {
   width: 109px;
   height: 109px;
 }
 
 /* random_flower. */
-.studio h2::before {
+.my-studio h2::before {
   width: 203px;
   height: 203px;
 }
@@ -90,51 +90,14 @@ footer {
 /* Ajout de l'animation rotation sur les fleurs avec la variable --rotate définie dans root */
 .story h2::after,
 .story__article::after,
-.studio h2::after,
-.studio h2::before,
+.my-studio h2::after,
+.my-studio h2::before,
 .nomination::before,
 .nomination::after,
 .site-footer::before,
 .site-footer::after,
 .site-footer ul::after {
   animation: rotate-flower var(--rotate) linear infinite;
-}
-
-@keyframes title-animation {
-  100% {
-    transform: translateY(0%);
-  }
-}
-@keyframes fadeBackgroundTitle {
-  from {
-    background-position: 0 300px;
-    opacity: 0;
-  }
-  to {
-    background-position: 0 0;
-    opacity: 1;
-  }
-}
-.story h2 {
-  background-image: url("../assets/images/purple_title_bg.png");
-  animation: fadeBackgroundTitle 1s ease-in-out;
-}
-
-span.title,
-span.title-studio {
-  display: inline-block;
-  opacity: 0;
-  transform: translateY(100px);
-  transition: transform 1s, opacity 0.5s;
-}
-
-.title-animation:nth-child(1) {
-  animation: fadeInBottom 0.6s ease-in-out forwards;
-}
-
-.title-animation:nth-child(2) {
-  animation: fadeInBottom 0.6s ease-in-out forwards;
-  animation-delay: 0.3s;
 }
 
 /* Styles pour .nomination */
@@ -185,16 +148,17 @@ span.title-studio {
   left: 4em;
   top: 0em;
   width: 216px;
-  height: 216px;
+  height: 215px;
 }
 .nomination::after {
-  content: url("../assets/images/orchid.png");
+  content: "";
+  background: url("../assets/images/orchid.png");
   background-repeat: no-repeat;
   position: absolute;
   right: -4em;
   bottom: -3em;
-  width: 178px;
-  height: 178px;
+  width: 172px;
+  height: 168px;
 }
 
 /** Cacher les fleurs appartenant au footer pour les déplacer dans la nouvelle section nomination **/
@@ -235,6 +199,45 @@ span.title-studio {
 .story #place img.little__cloud {
   top: 79%;
   right: calc(14% + 320px);
+}
+
+@keyframes title-animation {
+  100% {
+    transform: translateY(0%);
+  }
+}
+@keyframes fadeBackgroundTitle {
+  from {
+    background-position: 0 300px;
+    opacity: 0;
+  }
+  to {
+    background-position: 0 0;
+    opacity: 1;
+  }
+}
+.story .my-studio h2 {
+  animation: fadeBackgroundTitle 1s ease-in-out;
+}
+
+.my-studio.custom-studio-class h2 {
+  background-image: url("../assets/images/purple_studio_bg.png");
+}
+
+span.title {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: transform 1s, opacity 0.5s;
+}
+
+.title-animation:nth-child(1) {
+  animation: fadeInBottom 0.6s ease-in-out forwards;
+}
+
+.title-animation:nth-child(2) {
+  animation: fadeInBottom 0.6s ease-in-out forwards;
+  animation-delay: 0.3s;
 }
 
 .characters {
@@ -284,6 +287,41 @@ span.title-studio {
     align-self: center;
   }
 }
+#my-studio {
+  position: relative;
+  margin-top: 3em;
+}
+#my-studio h2 {
+  /* overflow: hidden; */
+}
+#my-studio h2::before {
+  content: url("../assets/images/random_flower.png");
+  position: absolute;
+  left: -1em;
+  top: 0;
+}
+#my-studio h2::after {
+  content: url("../assets/images/flower.png");
+  position: absolute;
+  right: 1em;
+  top: 1.2em;
+}
+#my-studio > div {
+  display: flex;
+  justify-content: space-between;
+  width: 66.66%;
+  margin: auto;
+}
+#my-studio > div::before {
+  content: url("../assets/images/trple-leaf.png");
+  position: absolute;
+  left: calc(50% - 17.225px);
+  top: 40%;
+}
+#my-studio > div p {
+  width: 44.5%;
+}
+
 :root {
   --cloudsPositionX: 0;
   --rotate: 15s; /* la durée souhaitée en secondes */

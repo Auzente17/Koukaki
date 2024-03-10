@@ -51,8 +51,8 @@
     position: absolute;
     left: 4em;
     top: 0em;
-    max-width: 100%;
-    height: auto;
+    width: 216px;
+    height: 215px;
   }
 
   &::after {
@@ -62,9 +62,8 @@
     position: absolute;
     right: -4em;
     bottom: -3em;
-    max-width: 100%;
-    height: auto;
-    overflow: hidden;
+    width: 172px;
+    height: 168px;
   }
 }
 

@@ -1,0 +1,55 @@
+// ANIMATION DES TITRES //
+
+// KEYFRAMES pour les animations de titres
+@keyframes title-animation {
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+// KEYFRAMES pour les animations des background des titres
+
+@keyframes fadeBackgroundTitle {
+  from {
+    background-position: 0 300px;
+    opacity: 0;
+  }
+  to {
+    background-position: 0 0;
+    opacity: 1;
+  }
+}
+
+// Style pour les titres
+
+// Titres H2 fonds violets
+.story .my-studio {
+  h2 {
+    animation: fadeBackgroundTitle 1s ease-in-out;
+  }
+}
+
+.my-studio {
+  &.custom-studio-class {
+    h2 {
+      background-image: url("../assets/images/purple_studio_bg.png");
+    }
+  }
+}
+
+// Mise en place de l'animation des titres
+span.title {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: transform 1s, opacity 0.5s;
+}
+
+.title-animation:nth-child(1) {
+  animation: fadeInBottom 0.6s ease-in-out forwards;
+}
+
+.title-animation:nth-child(2) {
+  animation: fadeInBottom 0.6s ease-in-out forwards;
+  animation-delay: 0.3s;
+}

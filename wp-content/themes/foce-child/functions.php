@@ -20,6 +20,8 @@ wp_enqueue_script('child-script', get_theme_file_uri() . '/js/script.js', array(
 
 wp_enqueue_script('swiper-js', get_theme_file_uri() . '/js/swiper.js', array(), time(), true);
 wp_enqueue_script('clouds-js', get_theme_file_uri() . '/js/clouds.js', array(), time(), true);
+wp_enqueue_script('titres-js', get_theme_file_uri() . '/js/titres.js', array(), time(), true);
+wp_enqueue_script('burger-js', get_theme_file_uri() . '/js/burger.js', array(), time(), true);
 }
 
 // Get customizer options form parent theme
