@@ -16,7 +16,7 @@ wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
 wp_enqueue_style('child-style', get_stylesheet_directory_uri() . '/css/style.css', array(), time());
 
 // Chargement du script du thème enfant    
-wp_enqueue_script('child-script', get_theme_file_uri() . '/js/script.js', array('jquery'),time(), true);
+wp_enqueue_script('child-script', get_theme_file_uri() . '/js/script.js', array(),time(), true);
 
 wp_enqueue_script('swiper-js', get_theme_file_uri() . '/js/swiper.js', array(), time(), true);
 wp_enqueue_script('clouds-js', get_theme_file_uri() . '/js/clouds.js', array(), time(), true);

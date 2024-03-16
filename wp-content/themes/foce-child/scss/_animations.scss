@@ -71,6 +71,8 @@ footer {
   height: 173px;
 }
 
+// KEYFRAMES pour la rotation des fleurs //
+
 @keyframes rotate-flower {
   from {
     transform: rotate(0deg);
@@ -91,4 +93,93 @@ footer {
 .site-footer::after,
 .site-footer ul::after {
   animation: rotate-flower var(--rotate) linear infinite;
+}
+
+// RESPONSIVE //
+@media screen and (min-width: 320px) and (max-width: 768px) {
+  .story h2::after,
+  .story__article::after,
+  .my-studio h2::after,
+  .my-studio h2::before,
+  .nomination::before,
+  .nomination::after,
+  .site-footer::before,
+  .site-footer::after {
+    display: none;
+  }
+}
+
+// ANIMATIONS DE LA BANNER ET DU LOGO //
+
+// KEYFRAMES Mouvement de bas en haut du logo
+@keyframes moveUp {
+  0% {
+    transform: translateY(600px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+// KEYFRAMES Banner + image
+@keyframes moveDown {
+  0% {
+    transform: translateY(-300px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    visibility: visible;
+  }
+}
+
+// KEYFRAMES Flottement du logo
+@keyframes floating-animation {
+  10% {
+    transform: translate3d(0, 5px, 0);
+  }
+  30% {
+    transform: translate3d(0, -10px, 0);
+  }
+  43% {
+    transform: translate3d(8px, 0, 0);
+  }
+  50% {
+    transform: translate3d(-2px, -6px, O);
+  }
+  60% {
+    transform: translate3d(4px, -2px, 0);
+  }
+  72% {
+    transform: translate3d(-8px, 6px, 0);
+  }
+  85% {
+    transform: translate3d(-2px, 3px, 0);
+  }
+}
+
+// ROTATION DES IMAGES DU MENU BURGER //
+
+// KEYFRAMES des fade in du menu pour quand je l'ouvre et le ferme
+@keyframes menuFadeIn {
+  0% {
+    opacity: 0;
+    height: 0;
+  }
+  100% {
+    opacity: 1; /* Opacité à 1 lorsque le menu est complètement apparu */
+    height: calc(100vh - 100px);
+  }
+}
+
+@keyframes menuFadeDown {
+  0% {
+    opacity: 1;
+    height: calc(100vh - 100px);
+  }
+  100% {
+    opacity: 0; /* Opacité à 0 lorsque le menu est complètement fermé */
+    height: 0;
+  }
 }

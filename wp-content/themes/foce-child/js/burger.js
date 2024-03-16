@@ -1,5 +1,4 @@
 // MENU BURGER //
-
 const buttonMenu = document.querySelector(".buttonMenu");
 const burger = document.querySelector(".activeMenu");
 const menuLinks = document.querySelectorAll(".activeMenu ul li a");

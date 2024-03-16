@@ -19,7 +19,7 @@
   img {
     position: absolute;
     -moz-filter: blur(15px);
-    filter: blur(15px);
+    filter: blur(15px) !important;
     z-index: 2;
     transform: translateX(var(--cloudsPositionX));
 

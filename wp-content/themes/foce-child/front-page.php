@@ -6,15 +6,14 @@ get_header();
     <main id="primary" class="site-main">
         <!--Ici je vais ajouter la vidéo et la banner background -->
         <section class="banner">
-            
-                <video class="banner__video"autoplay loop muted>
+            <div class="banner__container banner__container--video">
+                <video id="background-video" autoplay loop muted>
                 <source src="<?php echo get_stylesheet_directory_uri() . '/assets/Video/video.mp4'; ?>" type="video/mp4">
                 </video>
-            
+</div>
                      
-            <div class="banner__logo">
-                <img src="<?php echo get_stylesheet_directory_uri() . '/assets/images/logo.png'; ?>" alt="logo Fleurs d'oranger & chats errants">
-            </div>
+            <img class="banner__logo" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/logo.png'; ?>" alt="logo Fleurs d'oranger & chats errants">
+            
         </section>
 
 
