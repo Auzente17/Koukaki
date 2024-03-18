@@ -1,8 +1,6 @@
 // DEPLACEMENT DES NUAGES //
-
 // Mise en place de la variable pour le mouvement des nuages
 let cloudsPositionX = 0;
-
 // Elements pour le mouvement des nuages
 const root = document.documentElement;
 const locationElement = document.getElementById("place");
@@ -30,7 +28,6 @@ function adjustCloudsPosition() {
     root.style.setProperty("--cloudsPositionX", `${cloudsPositionX}px`);
   }
 }
-
 window.addEventListener("scroll", () => {
   root.style.setProperty("--speed", "1s");
   adjustCloudsPosition();

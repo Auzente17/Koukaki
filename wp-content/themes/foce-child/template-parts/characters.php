@@ -11,11 +11,9 @@
                 'meta_key'  => '_main_char_field',
                 'orderby'   => 'meta_value_num',
             );
-
             $characters_query = new WP_Query($args);
             
           ?>
-
     <!-- Slider main container -->  
     <div class="swiper">  
         <!-- Additional required wrapper --> 
